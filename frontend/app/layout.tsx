@@ -5,6 +5,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { theme } from "../theme";
 import "../global.css";
 import { Header } from "../components/header/header";
+import { Footer } from "../components/footer/footer";
 
 export const metadata = {
   title: "Brasil Times",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: any }) {
         <MantineProvider theme={theme}>
           <Header />
           {children}
+          <Footer />
         </MantineProvider>
       </body>
     </html>

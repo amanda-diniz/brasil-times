@@ -1,6 +1,6 @@
 "use client";
 import { Carousel } from "@mantine/carousel";
-import { Paper, Text, Title, Button, Stack, rem } from "@mantine/core";
+import { Paper, Badge, Stack, rem } from "@mantine/core";
 import classes from "./article-carousel.module.css";
 
 interface Article {
@@ -21,19 +21,10 @@ function Card({ image, title, category }: Article) {
       style={{ backgroundImage: `url(${image})`, backgroundPosition: "top" }}
       className={classes.card}
     >
-      <Paper radius="md" bg="dark" p={16}>
-        <Stack gap={0}>
-          <Text className={classes.category} size="xs">
-            {category}
-          </Text>
-          <Title order={3} className={classes.title}>
-            {title}
-          </Title>
-        </Stack>
-      </Paper>
-      <Button variant="white" color="dark">
-        Read article
-      </Button>
+      <Badge color="black">{category}</Badge>
+      <div className="bg-black bg-opacity-30 text-white text-3xl font-extrabold w-1/2 p-2 leading-tight rounded-md">
+        {title}
+      </div>
     </Paper>
   );
 }

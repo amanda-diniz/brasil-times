@@ -19,6 +19,10 @@ interface Category {
 }
 
 export default async function HomePage() {
+  const articles = await fetch("http://localhost:8000/articles").then(
+    (res) => res.json()
+  );
+
   const categories = await fetch("http://localhost:8000/categories").then(
     (res) => res.json()
   );
@@ -27,7 +31,9 @@ export default async function HomePage() {
     <div className="container mx-auto">
       <div className="grid grid-cols-3 gap-4 py-8">
         <div className="col-span-2">
-          <CardsCarousel articles={categories[0].articles} />
+          <CardsCarousel articles={articles} />
+        </div>
+        <div>
         </div>
       </div>
       <div className="flex flex-col gap-4">
