@@ -8,31 +8,28 @@ interface Article {
   image: string;
   author: string;
   publish_date: string;
+  category: string;
 }
 
 export function ArticleCard({ article }: { article: Article }) {
+  const formatDate = (date: string) => {
+    return new Date(date).toLocaleString()
+  };
+
   return (
-    <Card withBorder radius="md" p={0} className={classes.card}>
+    <Card p={0} radius={0} className={classes.card}>
       <Group wrap="nowrap" gap={0}>
-        <Image src={article.image} h={150} w={150} />
+        <Image src={article.image} h={160} w={160} radius={"md"} />
         <div className={classes.body}>
           <Text tt="uppercase" c="dimmed" fw={700} size="xs">
-            technology
+            {article.category}
           </Text>
-          <Text className={classes.title} mt="xs" mb="md">
+          <Text className={classes.title} mt="xs" mb="sm">
             {article.title}
           </Text>
-          <Group wrap="nowrap" gap="xs">
-            <Group gap="xs" wrap="nowrap">
-              <Text size="xs"> {article.author}</Text>
-            </Group>
-            <Text size="xs" c="dimmed">
-              •
-            </Text>
-            <Text size="xs" c="dimmed">
-              {article.publish_date}
-            </Text>
-          </Group>
+          <Text mb="md" size="sm">
+            {article.subtitle}
+          </Text>
         </div>
       </Group>
     </Card>
