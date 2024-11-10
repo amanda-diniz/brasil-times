@@ -4,6 +4,7 @@ from news.models import Article
 class ArticleSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url=True)
     author = serializers.CharField(source="author.username")
+    category = serializers.CharField(source="category.name")
 
     class Meta:
         model = Article
@@ -16,4 +17,5 @@ class ArticleSerializer(serializers.ModelSerializer):
             "author",
             "publish_date",
             "create_date",
+            "category",
         ]
