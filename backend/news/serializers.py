@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from news.models import Article
+from news.models import Article, Category
 
 class ArticleSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url=True)
@@ -18,4 +18,16 @@ class ArticleSerializer(serializers.ModelSerializer):
             "publish_date",
             "create_date",
             "category",
+        ]
+
+class CategorySerializer(serializers.ModelSerializer):
+    articles = ArticleSerializer(many=True)
+
+    class Meta:
+        model = Category
+        fields = [
+            "id",
+            "name",
+            "color",
+            "articles",
         ]
