@@ -10,7 +10,7 @@ const links = [
   { link: "/about", label: "Sobre nós" },
 ];
 
-export function HeaderSearch() {
+export function Header() {
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => (
