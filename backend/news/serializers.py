@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from news.models import Article
 
-class PostSerializer(serializers.ModelSerializer):
+class ArticleSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url=True)
     author = serializers.CharField(source="author.username")
-    
+
     class Meta:
         model = Article
         fields = [
