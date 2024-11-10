@@ -1,3 +1,9 @@
+import { HeaderSearch } from "../components/header/header";
+
 export default function HomePage() {
-  return <div>Home page</div>;
+  return (
+    <div>
+      <HeaderSearch />
+    </div>
+  );
 }
