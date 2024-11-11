@@ -44,6 +44,3 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-    def publish(self):
-        self.publish_date = timezone.now()
-        self.save()

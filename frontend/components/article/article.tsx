@@ -1,4 +1,5 @@
-import { Card, Image, Text, Group, Title } from "@mantine/core";
+import { Image, Text, Title } from "@mantine/core";
+
 export function Article({ article }: { article: Article }) {
   const formatDate = (date: string) => {
     return new Date(date).toLocaleString()

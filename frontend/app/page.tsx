@@ -1,6 +1,7 @@
 import { Title } from "@mantine/core";
 import { ArticleCard } from "../components/article-card/article-card";
 import { CardsCarousel } from "../components/article-carousel/article-carousel";
+import { ColumnCard } from "../components/column-card/column-card";
 
 export default async function HomePage() {
   const articles = await fetch("http://localhost:8000/articles").then((res) =>
@@ -11,20 +12,32 @@ export default async function HomePage() {
     (res) => res.json()
   );
 
+  const columns = articles.reduce((acc: Article[], article: Article) => {
+    if (!acc.some(a => a.author === article.author)) {
+      acc.push(article);
+    }
+    return acc;
+  }, []);
+
   return (
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-3 gap-4 py-8">
+      <div className="grid grid-cols-3 gap-8 py-8">
         <div className="col-span-3 md:col-span-2">
           <CardsCarousel articles={articles} />
         </div>
-        <div></div>
+        <div className="flex flex-col gap-4">
+          <Title order={2}>Colunistas</Title>
+          {columns.map((article: Article) => (
+            <ColumnCard article={article} />
+          ))}
+        </div>
       </div>
       <div className="flex flex-col gap-4">
         <Title order={2}>Editorias</Title>
         <div className="flex flex-col gap-8 md:flex-row">
-          {categories.map((category: Category, index: number) => (
+          {categories.map((category: Category) => (
             <div
-              key={`${category.id}-${index}`}
+              key={`category-${category.id}`}
               className="flex flex-col gap-4 md:w-1/3"
             >
               <Title order={3} c={category.color}>

@@ -1,4 +1,4 @@
-import { Card, Image, Text, Group } from "@mantine/core";
+import { Card, Image, Text } from "@mantine/core";
 
 import classes from "./article-card.module.css";
 import Link from "next/link";
