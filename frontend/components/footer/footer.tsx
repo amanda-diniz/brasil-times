@@ -9,11 +9,11 @@ import {
 import classes from "./footer.module.css";
 
 const links = [
-  { link: "#", label: "Contact" },
-  { link: "#", label: "Privacy" },
+  { link: "#", label: "Contato" },
+  { link: "#", label: "Privacidade" },
   { link: "#", label: "Blog" },
-  { link: "#", label: "Store" },
-  { link: "#", label: "Careers" },
+  { link: "#", label: "Loja" },
+  { link: "#", label: "Carreira" },
 ];
 
 export function Footer() {
@@ -35,7 +35,7 @@ export function Footer() {
       <div className={classes.inner}>
         <Group gap={4}>
           <IconNews stroke={2} />
-          <p className="font-bold">Brasil Times</p>
+          <p className="font-bold">BRASIL TIMES</p>
         </Group>
         <Group className={classes.links}>{items}</Group>
 

@@ -25,3 +25,11 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+
+.control {
+  background-color: var(--mantine-color-white);
+}
+
+.indicator {
+  background-color: var(--mantine-color-white);
+}
