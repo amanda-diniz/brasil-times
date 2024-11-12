@@ -13,7 +13,7 @@ export default async function HomePage() {
   );
 
   const columns = articles.reduce((acc: Article[], article: Article) => {
-    if (!acc.some(a => a.author === article.author)) {
+    if (!acc.some((a) => a.author === article.author)) {
       acc.push(article);
     }
     return acc;
@@ -27,9 +27,11 @@ export default async function HomePage() {
         </div>
         <div className="flex flex-col gap-4">
           <Title order={2}>Colunistas</Title>
-          {columns.map((article: Article) => (
-            <ColumnCard article={article} />
-          ))}
+          <div className="flex flex-col gap-4">
+            {columns.map((article: Article) => (
+              <ColumnCard key={article.id} article={article} />
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-4">
@@ -44,7 +46,7 @@ export default async function HomePage() {
                 {category.name}
               </Title>
               {category.articles.map((article: Article) => (
-                <ArticleCard article={article} />
+                <ArticleCard key={article.id} article={article} />
               ))}
             </div>
           ))}
