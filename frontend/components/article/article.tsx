@@ -17,8 +17,8 @@ export function Article({ article }: { article: Article }) {
       </div>
       <Image mb={48} src={article.image} radius={"sm"} />
       <div className="space-y-4">
-        {article.content.split(/\r?\n|\r|\n/g).map((paragraph) => (
-          <Text>{paragraph}</Text>
+        {article.content.split(/\r?\n|\r|\n/g).map((paragraph, index) => (
+          <Text key={index}>{paragraph}</Text>
         ))}
       </div>
     </article>

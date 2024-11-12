@@ -3,6 +3,7 @@ import { Autocomplete, Group, Burger, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconNews, IconSearch } from "@tabler/icons-react";
 import classes from "./header.module.css";
+import Link from "next/link";
 
 const links = [
   { link: "/news", label: "Notícias" },
@@ -29,10 +30,12 @@ export function Header() {
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+            <Link href={"/"}>
           <Group gap={4}>
-            <IconNews stroke={2} />
-            <p className="font-bold">BRASIL TIMES</p>
+              <IconNews stroke={2} />
+              <p className="font-bold">BRASIL TIMES</p>
           </Group>
+            </Link>
         </Group>
 
         <Group>
