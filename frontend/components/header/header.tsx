@@ -31,7 +31,7 @@ export function Header() {
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
           <Group gap={4}>
             <IconNews stroke={2} />
-            <p className="font-bold">Brasil Times</p>
+            <p className="font-bold">BRASIL TIMES</p>
           </Group>
         </Group>
 
