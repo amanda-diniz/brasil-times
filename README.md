@@ -34,8 +34,8 @@ Este projeto é uma solução de um site de notícias para o portal Brasil Times
 Primeiro, clone o repositório e navegue até o diretório do projeto:
 
 ```bash
-git clone <url-do-repositorio>
-cd <nome-do-projeto>
+git clone git@github.com:amanda-diniz/brasil-times.git
+cd brasil-times
 ```
 
 ---
