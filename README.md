@@ -98,9 +98,9 @@ Se preferirem, podem excluir o arquivo `db.sqlite3` e executar as migrações no
 3. **Execute o frontend**:
 
    ```bash
-   npm start
+   npm run dev
    # ou
-   yarn start
+   yarn dev
    ```
 
    O frontend estará rodando em `http://localhost:3000`.
