@@ -110,7 +110,7 @@ Se preferirem, podem excluir o arquivo `db.sqlite3` e executar as migrações no
 Para acessar o painel administrativo, utilize o endereço abaixo:
 
 - **URL**: [http://localhost:8000/admin](http://localhost:8000/admin)
-- **Usuário**: `admin`
+- **Usuário**: `admin` ou `editor`
 - **Senha**: `123456`
 
 ## 📚 Referências de Aprendizado
