@@ -2,6 +2,8 @@
 
 Este projeto é uma solução de um site de notícias para o portal Brasil Times, permitindo que editores e administradores gerenciem notícias. O projeto é dividido entre backend e frontend, cada um com suas tecnologias e processos de instalação descritos abaixo.
 
+![image](https://github.com/user-attachments/assets/480388a2-bd2f-4d8f-a190-a77e1557ae6f)
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -96,9 +98,9 @@ Se preferirem, podem excluir o arquivo `db.sqlite3` e executar as migrações no
 3. **Execute o frontend**:
 
    ```bash
-   npm start
+   npm run dev
    # ou
-   yarn start
+   yarn dev
    ```
 
    O frontend estará rodando em `http://localhost:3000`.
